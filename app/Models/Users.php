@@ -13,4 +13,6 @@ class Users extends Model
         'name',
         'numberOfCoins',
     ];
+
+    protected $returnType = 'array';
 }
