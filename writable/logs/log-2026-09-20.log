@@ -1,0 +1,21 @@
+DEBUG - 2026-09-20 18:21:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-09-20 19:14:35 --> RuntimeException: Amount must be greater than zero.
+[Method: POST, Route: testUser/1/create]
+in APPPATH/Models/Deals.php on line 32.
+ 1 APPPATH/Controllers/Home.php(33): App\Models\Deals->createDeal(1, 2, 0)
+ 2 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\Home->create('1')
+ 3 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-20 19:14:56 --> RuntimeException: Buyer and seller cannot be the same user.
+[Method: POST, Route: testUser/2/create]
+in APPPATH/Models/Deals.php on line 28.
+ 1 APPPATH/Controllers/Home.php(33): App\Models\Deals->createDeal(2, 2, 1)
+ 2 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\Home->create('2')
+ 3 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

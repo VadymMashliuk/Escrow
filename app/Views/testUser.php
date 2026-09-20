@@ -15,15 +15,17 @@
     <h1>Угоди <b><?= $users['name'] ?></b></h1>
     <h2>Кількість ETH: <?= $users['numberOfCoins'] ?></h2>
     <?php foreach ($deals as $deal): ?>
-        ID: <?= $deal['id'] ?>
-        <br>Buyer: <?= $deal['buyer'] ?>
-        <br>Seller: <?= $deal['seller'] ?>
-        <br>Amount: <?= $deal['amount'] ?> ETH
-        <br>Status: <?= $deal['status'] ?>
-        <br><br>Created at: <?= $deal['createdAt'] ?>
-        <br>Updated at: <?= $deal['updatedAt'] ?>
+        ID: <?= $deal['id'] ?>.
+        Buyer: <?= $deal['buyer'] ?>.
+        Seller: <?= $deal['seller'] ?>.
+        Amount: <?= $deal['amount'] ?> ETH.
+        Status: <?= $deal['status'] ?>.
+        <br>Created at: <?= $deal['createdAt'] ?>.
+        Updated at: <?= $deal['updatedAt'] ?>.
+        <br><br>
     <?php endforeach; ?>
-    <form action="<?= base_url('testUser/'.$users['id']).'/createDeal' ?>" method="post">
+    <br><br>
+    <form action="<?= base_url('testUser/'.$users['id'].'/create') ?>" method="post">
         <?= csrf_field() ?>
         <label for="seller">Seller:</label>
         <select name="seller" id="seller">
@@ -35,10 +37,8 @@
             <?php endif; ?>
             <?php endforeach; ?>
         </select>
-        <br><br>
         <label for="amount">Amount:</label>
-        <input type="number" name="amount" id="amound", min="1" required>
-        <br><br>
+        <input type="number" name="amount" id="amount" min="1" required>
         <button type="submit">Create deal</button>
     </form>
 </body>
