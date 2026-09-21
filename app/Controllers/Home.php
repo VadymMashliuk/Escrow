@@ -35,4 +35,66 @@ class Home extends BaseController
         $this->deals->createDeal($id, $sellerId, $amount);
         return redirect()->to('testUser/'.$id);
     }
+    public function fundDeal(int $dealId, int $buyerId): void
+    {
+        $deal = $this->find($dealId);
+        if (!$deal)
+        {
+            throw new RuntimeException('Deal not found.');
+        }
+        if ($deal['status'] !== 'Created')
+        {
+            throw new RuntimeException('Deal is not in Created status.');
+        }
+        if ((int) $deal['buyer'] !== $buyerId)
+        {
+            throw new RuntimeException('Only buyer can fund the deal.');
+        }
+        $buyer = $this->users->find($buyerId);
+        if (!$buyer)
+        {
+            throw new RuntimeException('Buyer not found');
+        }
+        if ((int) $buyer['numberOfCoins'] < (int) $deal['amount'])
+        {
+            throw new RuntimeException('Not enough coins.');
+        }
+        $db = $this->db;
+        $db->transStart();
+        $this->users->update(
+            $buyerId,
+            [
+                'numberOfCoins' => $buyer['numberOfCoins'] - $deal['amount']
+            ]
+        );
+        $this->update(
+            $dealId,
+            [
+                'status' => 'Funded',
+                'updatedAt' => date('Y-m-d H:i:s')
+            ]
+        );
+        $db->transComplete();
+        if ($db->transStatus() === false)
+        {
+            throw new RuntimeException('Failed to fund deal.');
+        }
+    }
+    public function confirmDelivery(int $dealId, int $buyerId): void
+    {
+        $deal = $this->find($dealId);
+        if (!$deal)
+        {
+            throw new RuntimeException('Deal not found.');
+        }
+        if ($deal['status'] !== 'Funded')
+        {
+            throw new RuntimeException('Deal is not Funded');
+        }
+        if ((int) $deal['buyer'] !== $buyerId)
+        {
+            throw new RuntimeException('Only buyer can confirm delivery.');
+        }
+        $seller = $this->users->find($deal['seller']);
+    }
 }
