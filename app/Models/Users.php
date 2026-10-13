@@ -11,8 +11,6 @@ class Users extends Model
 
     protected $allowedFields = [
         'name',
-        'numberOfCoins',
+        'numberOfCoins'
     ];
-
-    protected $returnType = 'array';
 }
