@@ -1,0 +1,32 @@
+CRITICAL - 2026-10-14 19:00:39 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: /]
+in APPPATH/Views/home.php on line 13.
+ 1 APPPATH/Views/home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', '/Applications/MAMP/htdocs/Escrow/app/Views/home.php', 13)
+ 2 SYSTEMPATH/View/View.php(240): include('/Applications/MAMP/htdocs/Escrow/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1268): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(18): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-14 19:00:40 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: /]
+in APPPATH/Views/home.php on line 13.
+ 1 APPPATH/Views/home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', '/Applications/MAMP/htdocs/Escrow/app/Views/home.php', 13)
+ 2 SYSTEMPATH/View/View.php(240): include('/Applications/MAMP/htdocs/Escrow/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1268): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(18): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-14 19:00:48 --> ErrorException: Cannot use [] for reading
+[Method: GET, Route: /]
+in APPPATH/Views/home.php on line 13.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
