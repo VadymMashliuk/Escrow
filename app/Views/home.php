@@ -14,5 +14,13 @@
             <?php endforeach; ?>
         </ul>
     </nav>
+    <div class="container">
+        <?php foreach ($users as $user): ?>
+            <a href="<?= base_url($user['id']) ?>">
+                <button class="btn btn-primary" type="button"><?= $user['name'] ?></button>
+            </a>
+            <br><br>
+        <?php endforeach; ?>
+    </div>
 </body>
 </html>
